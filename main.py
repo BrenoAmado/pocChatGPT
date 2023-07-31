@@ -12,9 +12,6 @@ pd.set_option('display.max_columns', None)
 def main():
     pdf = extract_data_pdf("adm_mack_test.pdf")
     excel = extract_data_excel("adm_test.xlsm")
-<<<<<<< Updated upstream
-    response = GPTResponse("Reformule passando carga horaria / nome da materia / aprovado ou não, retire de todas as paginas (total 3) e 48 registros / materias, e mande no formato de lista, mande na estrutura correta para ser jogado dentro de pd.DataFrame(response)" + str(pdf))
-=======
     texto = '''
 COMPONENTES Nº DE AULAS CARGA Código Nome HORÁRIA ANO/SEMESTRE NOTA FINAL RESULTADO PROFESSOR(A) TITULACAO 01 ETAPA ENEC51403 CIENC,TECNOL E SOC NA ADM E NEG 2 31h 40min 2019/ 1 6,00 APROVADO ARNALDO FRANCISCO CARDOSO MESTRE ENEX50523 INFORMATICA BAS PARA ADMINISTRADORES 2 31h 40min 2019/ 1 8,40 APROVADO NELSON MITSUO SHIMABUKURO MESTRE ENEX50650 MARKETING I 4 63h 20min 2019/ 1 7,50 APROVADO FATIMA GUARDANI ROMITO DOUTOR ENEC50280 ELEMENTOS DE MATEMATICA 4 63h 20min 2020/ 1 7,50 APROVADO MAURICIO TAKAHASHI MESTRE ENEX50014 AMBIENTE PROF DO ADMINISTRADOR 4 63h 20min 2019/ 1 7,50 APROVADO ANA MARIA DOS SANTOS DOUTOR ENEC50151 COMUNICACAO E EXPRESSAO 2 31h 40min 2019/ 1 7,90 APROVADO LUCAS FERNANDO RIBEIRO JUKNEVI MESTRE ENUN51118 ETICA E CIDADANIA 2 31h 40min 2019/ 1 8,80 APROVADO JOSE ANTONIO DE GOES FILHO MESTRE 02 ETAPA ENEC50451 FUNDAMENTOS DE MATEMATICA 4 63h 20min 2021/ 1 7,00 APROVADO ANGELA DE SOUZA MENEZES MESTRE ENEC50733 NOCOES DE DIREITO 2 31h 40min 2019/ 2 8,00 APROVADO PAULA ZAMBELLI SALGADO BRASIL DOUTOR
 
@@ -27,7 +24,7 @@ ENEC50678 METOD DE PESQ EM CIENC SOC APLICADAS 4 63h 20min / ENEC50828 POL E PRA
     response = GPTResponse("Separate by codigo da materia/nome da materia/numero de aulas/carga horaria/ano e semestre/notal final/resultado, excluding professor(a)/titulacao records, filling in with - information not found. Send the result as a list of lists (each record being a list). It must contain the 48 records: " + texto)
     response_list = pd.DataFrame(list(response))
     pd.DataFrame(list(response))
->>>>>>> Stashed changes
+
     print(response)
 
 
