@@ -32,7 +32,7 @@ ENEC50678 METOD DE PESQ EM CIENC SOC APLICADAS 4 63h 20min / ENEC50828 POL E PRA
 # if __name__ == "__main__":
 #     main()
 
-where_lion = '''
+list_string = '''
 [['ENEK51403', 'CIENC,TECNOL E SOC NA ADM E NEG', '2', '31h 40min', '2019/ 1', '6,00', 'APROVADO', 'ARNALDO FRANCISCO CARDOSO', 'MESTRE'],
 ['ENEX50523', 'INFORMATICA BAS PARA ADMINISTRADORES', '2', '31h 40min', '2019/ 1', '8,40', 'APROVADO', 'NELSON MITSUO SHIMABUKURO', 'MESTRE'],
 ['ENEX50650', 'MARKETING I', '4', '63h 20min', '2019/ 1', '7,50', 'APROVADO', 'FATIMA GUARDANI ROMITO', 'DOUTOR'],
@@ -83,7 +83,7 @@ where_lion = '''
 ['ENOK51336','AVALIACAO DE EMPRESAS','4','63h 20min','-','-','-', '-', '-']]
 '''
 
-lista = ast.literal_eval(where_lion)
+lista = ast.literal_eval(list_string)
 print(lista)
-nelsinho = pd.DataFrame(lista, columns=['codigo', 'materia', 'aulas', 'carga horaria', 'semestre', 'nota', 'resultado', 'professor', 'titulacao'])
-print(nelsinho)
+dataframe_teste = pd.DataFrame(lista, columns=['codigo', 'materia', 'aulas', 'carga horaria', 'semestre', 'nota', 'resultado', 'professor', 'titulacao'])
+print(dataframe_teste)
