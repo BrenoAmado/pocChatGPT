@@ -3,7 +3,7 @@ import openai
 
 def GPTResponse(question):
     # Configure o seu token de autenticação
-    openai.api_key = "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"
+    openai.api_key = "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"
 
     # Texto que você quer que o modelo complete
     texto_para_completar = f"{question}"
