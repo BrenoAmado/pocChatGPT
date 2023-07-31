@@ -6,7 +6,7 @@ from pdf_adm_mack_test import extract_data_pdf
 def main():
     pdf = extract_data_pdf("adm_mack_test.pdf")
     excel = extract_data_excel("adm_test.xlsm")
-    response = GPTResponse("Correlacione as duas e veja se x aluno sera aprovado e em qual semestre: " + str(pdf) + str(excel))
+    response = GPTResponse("Reformule passando carga horaria / nome da materia / aprovado ou não, retire de todas as paginas (total 3) e 48 registros / materias, e mande no formato de lista, mande na estrutura correta para ser jogado dentro de pd.DataFrame(response)" + str(pdf))
     print(response)
 
 
