@@ -1,5 +1,5 @@
 from tabula import read_pdf
 
-dataframes = read_pdf('adm_mack_test.pdf', pages='all')
-
-print(dataframes)
+def extract_data_pdf(arquivo):
+    dataframes = read_pdf(f'{arquivo}', pages='all')
+    return dataframes

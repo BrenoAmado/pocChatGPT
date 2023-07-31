@@ -1,21 +1,23 @@
 import openai
 
-# Configure o seu token de autenticação
-openai.api_key = "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"
 
-# Texto que você quer que o modelo complete
-texto_para_completar = "qual a cor de uma banana e um morango? "
+def GPTResponse(question):
+    # Configure o seu token de autenticação
+    openai.api_key = "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"
 
-# Fazendo a chamada à API com o motor gpt-3.5-turbo
-resposta = openai.ChatCompletion.create(
-    model="gpt-3.5-turbo",  # Modelo de chat gpt-3.5-turbo
-    messages=[
-        {"role": "system", "content": "Você é um assistente de chat."},
-        {"role": "user", "content": texto_para_completar}
-    ]
-)
+    # Texto que você quer que o modelo complete
+    texto_para_completar = f"{question}"
 
-# Acessando a resposta do modelo
-texto_completado = resposta['choices'][0]['message']['content']
+    # Fazendo a chamada à API com o motor gpt-3.5-turbo
+    resposta = openai.ChatCompletion.create(
+        model="gpt-3.5-turbo",  # Modelo de chat gpt-3.5-turbo
+        messages=[
+            {"role": "system", "content": "Você é um assistente de chat."},
+            {"role": "user", "content": texto_para_completar}
+        ]
+    )
 
-print(texto_completado)
+    # Acessando a resposta do modelo
+    gpt_response = resposta['choices'][0]['message']['content']
+
+    return gpt_response
